@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/mainScreen">
+
+    <fragment
+        android:id="@+id/mainScreen"
+        android:name="uz.gita.newsappwithapi.presenter.ui.screen.MainScreen"
+        android:label="screen_main"
+        tools:layout="@layout/screen_main" >
+        <action
+            android:id="@+id/action_mainScreen_to_webScreen"
+            app:destination="@id/webScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/webScreen"
+        android:name="uz.gita.newsappwithapi.presenter.ui.screen.WebInfoScreen"
+        android:label="screen_web_info"
+        tools:layout="@layout/screen_web_info" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="read_more"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+</navigation>

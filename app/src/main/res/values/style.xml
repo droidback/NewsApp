@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.Support.CoordinatorLayout" parent="android:Widget">
+        <item name="statusBarBackground">@null</item>
+    </style>
+    
+    <style name="categoryTextStyle">
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:drawableStart">@drawable/ic_newspaper</item>
+    </style>
+</resources>

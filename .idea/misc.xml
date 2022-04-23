@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/drawable/ic_menu.xml" value="0.176" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/drawable/ic_newspaper.xml" value="0.176" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/drawable/ic_place_holder.xml" value="0.1925" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/layout/activity_main.xml" value="0.26197916666666665" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/layout/item_rv.xml" value="0.26197916666666665" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/layout/screen_main.xml" value="0.26197916666666665" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/layout/screen_navigation.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/MyProjects/NewsAppWithApi/app/src/main/res/layout/screen_web_info.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
