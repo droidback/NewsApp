@@ -1,18 +1,19 @@
 package uz.gita.newsappwithapi.presenter.viewmodel
 
 import androidx.lifecycle.LiveData
+import uz.gita.newsappuseroom.data.model.NewsData
 import uz.gita.newsappwithapi.data.remote.response.NewsResponse
 
 interface MainViewModel {
     val openDrawerLiveData: LiveData<Unit>
     val closeDrawerLiveData: LiveData<Unit>
-    val newsLiveData: LiveData<List<NewsResponse.ArticlesData>>
+    val newsLiveData: LiveData<List<NewsData>>
     val errorLiveData: LiveData<String>
     val categoryTitleLiveData: LiveData<String>
-    val openWebInfoScreenLiveData: LiveData<NewsResponse.ArticlesData>
+    val openWebInfoScreenLiveData: LiveData<NewsData>
 
     fun openDrawer()
-    fun loadNewsByCategory(category: String)
+    fun load(category: String)
     fun swipeRefresh()
-    fun openWebInfoScreen(data: NewsResponse.ArticlesData)
+    fun openWebInfoScreen(data: NewsData)
 }

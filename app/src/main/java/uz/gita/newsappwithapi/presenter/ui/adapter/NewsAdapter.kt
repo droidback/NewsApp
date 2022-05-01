@@ -7,19 +7,20 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import uz.gita.newsappuseroom.data.model.NewsData
 import uz.gita.newsappwithapi.R
 import uz.gita.newsappwithapi.data.remote.response.NewsResponse
 import uz.gita.newsappwithapi.databinding.ItemRvBinding
 
-class NewsAdapter : ListAdapter<NewsResponse.ArticlesData, NewsAdapter.Holder>(CategoryCallback) {
+class NewsAdapter : ListAdapter<NewsData, NewsAdapter.Holder>(CategoryCallback) {
 
-    private var onClickMoreListener: ((NewsResponse.ArticlesData) -> Unit)? = null
+    private var onClickMoreListener: ((NewsData) -> Unit)? = null
 
-    private object CategoryCallback : DiffUtil.ItemCallback<NewsResponse.ArticlesData>() {
-        override fun areItemsTheSame(oldData: NewsResponse.ArticlesData, newData: NewsResponse.ArticlesData): Boolean =
+    private object CategoryCallback : DiffUtil.ItemCallback<NewsData>() {
+        override fun areItemsTheSame(oldData: NewsData, newData: NewsData): Boolean =
             oldData.title == newData.title
 
-        override fun areContentsTheSame(oldData: NewsResponse.ArticlesData, newData: NewsResponse.ArticlesData): Boolean =
+        override fun areContentsTheSame(oldData: NewsData, newData: NewsData): Boolean =
             oldData == newData
     }
 
@@ -32,7 +33,7 @@ class NewsAdapter : ListAdapter<NewsResponse.ArticlesData, NewsAdapter.Holder>(C
             }
         }
 
-        fun bind(): NewsResponse.ArticlesData = with(binding) {
+        fun bind(): NewsData = with(binding) {
             getItem(absoluteAdapterPosition).apply {
                 titleText.text = title.trim()
 
@@ -57,7 +58,7 @@ class NewsAdapter : ListAdapter<NewsResponse.ArticlesData, NewsAdapter.Holder>(C
         holder.bind()
     }
 
-    fun setOnCategoryClickListener(block: (NewsResponse.ArticlesData) -> Unit) {
+    fun setOnCategoryClickListener(block: (NewsData) -> Unit) {
         onClickMoreListener = block
     }
 }

@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
+import uz.gita.newsappuseroom.data.model.NewsData
 import uz.gita.newsappwithapi.R
 import uz.gita.newsappwithapi.data.remote.response.NewsResponse
 import uz.gita.newsappwithapi.databinding.ScreenMainBinding
@@ -56,30 +57,30 @@ class MainScreen : Fragment(R.layout.screen_main) {
     private val errorObserver = Observer<String> {
         Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
     }
-    private val newsObserver = Observer<List<NewsResponse.ArticlesData>> {
+    private val newsObserver = Observer<List<NewsData>> {
         adapter.submitList(it)
     }
     private val categoryTitleObserver = Observer<String> {
         binding.title.text = it
     }
 
-    private val openWebInfoScreenObserver = Observer<NewsResponse.ArticlesData>{
+    private val openWebInfoScreenObserver = Observer<NewsData>{
         findNavController().navigate(MainScreenDirections.actionMainScreenToWebScreen(it.title, it.read_more))
     }
 
 
     private fun selectCategory() = with(binding.navigationLayout) {
-        allCategory.setOnClickListener { viewModel.loadNewsByCategory("all") }
-        nationalCategory.setOnClickListener { viewModel.loadNewsByCategory("national") }
-        businessCategory.setOnClickListener { viewModel.loadNewsByCategory("business") }
-        sportsCategory.setOnClickListener { viewModel.loadNewsByCategory("sports") }
-        worldCategory.setOnClickListener { viewModel.loadNewsByCategory("world") }
-        politicsCategory.setOnClickListener { viewModel.loadNewsByCategory("politics") }
-        technologyCategory.setOnClickListener { viewModel.loadNewsByCategory("technology") }
-        startUpCategory.setOnClickListener { viewModel.loadNewsByCategory("startup") }
-        entertainmentCategory.setOnClickListener { viewModel.loadNewsByCategory("entertainment") }
-        scienceCategory.setOnClickListener { viewModel.loadNewsByCategory("science") }
-        automobileCategory.setOnClickListener { viewModel.loadNewsByCategory("automobile") }
+        allCategory.setOnClickListener { viewModel.load("all") }
+        nationalCategory.setOnClickListener { viewModel.load("national") }
+        businessCategory.setOnClickListener { viewModel.load("business") }
+        sportsCategory.setOnClickListener { viewModel.load("sports") }
+        worldCategory.setOnClickListener { viewModel.load("world") }
+        politicsCategory.setOnClickListener { viewModel.load("politics") }
+        technologyCategory.setOnClickListener { viewModel.load("technology") }
+        startUpCategory.setOnClickListener { viewModel.load("startup") }
+        entertainmentCategory.setOnClickListener { viewModel.load("entertainment") }
+        scienceCategory.setOnClickListener { viewModel.load("science") }
+        automobileCategory.setOnClickListener { viewModel.load("automobile") }
     }
 
 }
