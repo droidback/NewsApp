@@ -11,6 +11,7 @@ interface MainViewModel {
     val errorLiveData: LiveData<String>
     val categoryTitleLiveData: LiveData<String>
     val openWebInfoScreenLiveData: LiveData<NewsData>
+    val emptyResultLiveData: LiveData<Unit>
 
     fun openDrawer()
     fun load(category: String)
